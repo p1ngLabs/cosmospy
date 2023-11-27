@@ -44,3 +44,35 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+BANGALORE_CODE = '(080)'
+
+print("--- Part A ---")
+def get_area_codes_and_mobile_prefixes(number: str):
+    TELEMARKETERS_PREFIX = '140'
+    # telemarketers' numbers
+    if number.startswith(TELEMARKETERS_PREFIX):
+        return TELEMARKETERS_PREFIX
+    # area code prefixes that is enclosed in parentheses
+    if number.startswith('(0'):
+        return number[1:number.index(')')]
+    # mobile prefixes which have four digits
+    if ' ' in number.strip() and int(number[0]) in [7,8,9]:
+        return number[:4]
+
+calls_from_Bangalore = 0
+calls_from_Bangalore_to_Bangalore = 0
+result = set()
+for call in calls:
+    if BANGALORE_CODE in call[0]:
+        result.add(get_area_codes_and_mobile_prefixes(call[1]))
+        calls_from_Bangalore += 1
+        if BANGALORE_CODE in call[1]:
+            calls_from_Bangalore_to_Bangalore += 1
+
+print("The numbers called by people in Bangalore have codes:")
+for code in sorted(result):
+    print(code)
+
+print("\n--- Part B ---")
+percentage = calls_from_Bangalore_to_Bangalore / calls_from_Bangalore * 100
+print(f"{percentage:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
