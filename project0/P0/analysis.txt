@@ -1,0 +1,36 @@
+# Worst-Case Big-O Notation analysis 
+
+## Task0:
+- There are two lines getting items from the list and accessing item from the list in Python takes O(1)
+- However large the inputs, our code always runs those 2 operations/lines
+- Worst-Case Big-O Notation is O(1 + 1) = O(2), if we count the print statements, Worst-Case Big-O is O(4)
+-> O(1)
+
+## Task1:
+- There are two separate loops for each inputs
+- The larger the inputs, the longer it takes for the code to iterate over each collections
+- Worst-Case Big-O Notation is O(n + m) with n is the input size of texts and m is the input size of calls
+-> O(n)
+
+## Task2:
+- For each element is added to the inputs, the operations inside the nested loop run two more times (in range [0,1])
+so our nested loops take O(2n)
+- If we count the `in` operator in the if statements takes O(m) to run, Big-O Notation of the for loops is O(2n + m)
+- `max()` Big-O is O(n)
+- Accessing item from the list is O(1)
+- So total Big-O is O(2n + m + 1) with m is the size of the result dictionary
+-> O(n)
+
+## Task3:
+- Each Big-O of the `in` operator in the for loop is O(4) (or O(1))
+- Hence Big-O of the first for loop is O(16n) with n is the size of the calls input
+- Worst case is all calls from the input is added to the result set, Big-O of the second for loop is O(n)
+- So total is O(17n)
+-> O(n)
+
+## Task4:
+- Big-O is O(n + m) for two loops (n and m are the calls and texts input sizes, respectively)
+- `result = get_possible_telemarketers(numbers_that_make_ongoing_calls)` takes O(nm) or O(n^2), assume n > m in the worst case so O(n^2)
+- Worst case is no number is remove from the `numbers_that_make_ongoing_calls` collections -> Big-O of the last loop is O(n)
+- So total is O(n + m + n^2 + n) = O(n^2 + 2n + m)
+-> O(n^2)
