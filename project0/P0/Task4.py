@@ -51,5 +51,5 @@ def get_possible_telemarketers(numbers: Set[str]) -> Set[str]:
     
 result = get_possible_telemarketers(numbers_that_make_ongoing_calls)
 print("These numbers could be telemarketers: ")
-for num in result:
+for num in sorted(result):
     print(num)
