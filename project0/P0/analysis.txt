@@ -25,12 +25,14 @@ so our nested loops take O(2n)
 - Each Big-O of the `in` operator in the for loop is O(4) (or O(1))
 - Hence Big-O of the first for loop is O(16n) with n is the size of the calls input
 - Worst case is all calls from the input is added to the result set, Big-O of the second for loop is O(n)
-- So total is O(17n)
+- Big-O Notation for the `sorted` function is O(nlogn)
+- So total is O(17n + nlogn)
 -> O(n)
 
 ## Task4:
 - Big-O is O(n + m) for two loops (n and m are the calls and texts input sizes, respectively)
 - `result = get_possible_telemarketers(numbers_that_make_ongoing_calls)` takes O(nm) or O(n^2), assume n > m in the worst case so O(n^2)
 - Worst case is no number is remove from the `numbers_that_make_ongoing_calls` collections -> Big-O of the last loop is O(n)
-- So total is O(n + m + n^2 + n) = O(n^2 + 2n + m)
+- Big-O of the `sorted` function is O(nlogn)
+- So total is O(n + m + n^2 + n + nlogn) = O(n^2 + n(2 + logn) + m)
 -> O(n^2)

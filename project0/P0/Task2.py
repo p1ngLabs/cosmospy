@@ -30,7 +30,6 @@ for call in calls:
             result[call[index]] = int(call[-1])
 
 longest_time_spent = max(result.values())
-most_time_spent_number = filter(lambda num: result[num] == longest_time_spent, result)
-print(most_time_spent_number)
+most_time_spent_number = list(filter(lambda num: result[num] == longest_time_spent, result))[0]
 
 print(f"{most_time_spent_number} spent the longest time, {longest_time_spent} seconds, on the phone during September 2016.")

@@ -40,11 +40,11 @@ for txt in texts:
 
 def get_possible_telemarketers(numbers: Set[str]) -> Set[str]:
     for num in numbers.copy():
-        # exclude numbers that never receive incoming calls
-        if num not in numbers_that_receive_calls:
+        # exclude numbers that receive incoming calls
+        if num in numbers_that_receive_calls:
             numbers.remove(num)
-        # exclude numbers that never text
-        elif num not in numbers_that_text:
+        # exclude numbers that text
+        elif num in numbers_that_text:
             numbers.remove(num)
 
     return numbers
