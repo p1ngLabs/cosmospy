@@ -1,0 +1,26 @@
+# Project: Show Me The Data Structures
+
+## Problem1
+  The cache is implemented by using dictionary data structure for constant time 
+look up and doubly linked list for keeping track of the order of recently used 
+cached value as well as constant time remove. A dictionary is used as a mapping of 
+cached keys and cached nodes. In addition to actual cached value, each node also 
+has two other reference fields, `prev` and `next` that store the cached key of 
+the previous (less recently used) and the next (more recently used) cached values, respectively.
+  Every time a cache is accessed whether by `get()` or `set()` methods, LRU cache 
+updates its reference fields to relocate it as the most recently used cached value 
+(at the tail of the doubly linked list). When setting a new value that exceeds cache's 
+capacity, the LRU cache removes the lease recently used value by detaching the head of 
+the doubly linked list. By laveraging the dictionary data type, the LRU cache's Big O 
+Notation for insertion, search and deletion is O(1) time complexity.
+
+## Problem2
+  The `find_files` function traverses the given path to find all the files with the 
+given suffix. We check each entry by using `isdir` and `isfile` from the Python `os` module. 
+If we find a directory in the given path, the `find_files` function is called recursively 
+with that directory path as parameter. If we find a file that its suffix matches the 
+given suffix, we add it to the result. The returned list of paths is a set data 
+structure to easily combine high-level and low-level directories using `union` method.
+  We have the input as a collection of entries size n, with each entry is a file or a 
+directory. The larger the input, the more entries we have to traverse, hence the Big O 
+Notation for implemented function is O(n).
