@@ -1,4 +1,4 @@
-# Worst-Case Big-O Notation analysis 
+# Worst-Case Big-O Notation analysis
 
 ## Task0:
 - There are two lines getting items from the list and accessing item from the list in Python takes O(1)
