@@ -6,7 +6,8 @@ look up and doubly linked list for keeping track of the order of recently used
 cached value as well as constant time remove. A dictionary is used as a mapping of 
 cached keys and cached nodes. In addition to actual cached value, each node also 
 has two other reference fields, `prev` and `next` that store the cached key of 
-the previous (less recently used) and the next (more recently used) cached values, respectively.
+the previous (less recently used) and the next (more recently used) cached values, 
+respectively.
   Every time a cache is accessed whether by `get()` or `set()` methods, LRU cache 
 updates its reference fields to relocate it as the most recently used cached value 
 (at the tail of the doubly linked list). When setting a new value that exceeds cache's 
@@ -30,12 +31,25 @@ Notation for implemented function is O(n).
 
 ## Problem4
   The `is_user_in_group` function recursively traverses the given group to find if the 
-given user is in that group (or group's sub group) or not. The algorithm uses the `in` 
+given user is in that group (or group's sub group) or not. The solution uses the `in` 
 operator to look in the Python list, hence the Big O Notation is O(n) in the worst case.
 
 ## Problem5
-  The problem is addressed by using linked list data structure to build a block chain.
-Linked list is used to have O(1) time complexity when adding new block to the chain. Newly 
-created block is always added to the head of the linked list. Each block also carries an index 
-as its index in the chain. The space complexity is O(n) as new block will take one space in the 
-memory, the more blocks we have, the more spaces we use.
+  The block chain is implemented as a linked list data structure for constant time 
+appending new block to the block chain. Newly created block is always added to the head 
+of the linked list. Each block also carries an index as its index in the chain. The 
+space complexity is O(n), as new block will take one space in the memory. The more blocks 
+we have, the more memory spaces we use.
+
+## Problem6
+  To find the union and intersection of two linked lists, we laverage the `union` and 
+`intersection` methods of Python set. We take two linked lists, turn them into sets, get 
+the union/intersection set of them then turn that set back to linked list. We modify the 
+code template to use doubly linked list instead of the given singly linked list to have 
+constant time implementation of the append method.
+  Every time we turn the given linked list to a set, it takes O(n) time complexity. 
+Next, referenced from https://wiki.python.org/moin/TimeComplexity, `union` and `intersection`
+of Python set has `O(len(s) + len(t))` and `O(len(s) * len(t))` respectively, worst case.
+Finally, our `to_linked_list` has O(n) time complexity. Therefore the whole Big O Notation 
+of the solution is O(n), the more elements in the linked lists, the longer it takes to get 
+the desired result. The space complexity is also O(n).
