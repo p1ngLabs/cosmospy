@@ -24,3 +24,11 @@ structure to easily combine high-level and low-level directories using `union` m
   We have the input as a collection of entries size n, with each entry is a file or a 
 directory. The larger the input, the more entries we have to traverse, hence the Big O 
 Notation for implemented function is O(n).
+
+## Problem3
+
+
+## Problem4
+  The `is_user_in_group` function recursively traverses the given group to find if the 
+given user is in that group (or group's sub group) or not. The algorithm uses the `in` 
+operator to look in the Python list, hence the Big O Notation is O(n) in the worst case.
