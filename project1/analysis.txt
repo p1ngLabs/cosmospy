@@ -27,7 +27,21 @@ directory. The larger the input, the more entries we have to traverse, hence the
 Notation for implemented function is O(n).
 
 ## Problem3
-
+  Part 1: Build the Huffman tree. The `heapq` module is used in the implementation of 
+Huffman coding to efficiently manage a priority queue. The choice of `heapq` ensure that 
+the nodes with the lowest frequencies are efficiently accessed by comparing nodes' 
+frequencies (with custom `__lt__` method). Its `heappop` and `heappush` methods allow 
+us to easily pop the smallest element as well as pushing new elements onto the heap.
+  `build_frequency_dict` has O(n) time complexity since it has to iterate through each 
+character in the input, where n is the length of the input data, or the length of the 
+input string. `build_huffman_tree` has O(nlogn) time complexity, where n is the number 
+of unique characters in the input data. `generate_huffman_codes` has O(n) time complexity 
+since each node is visited once when building the tree, where n is the number of nodes.
+  Part 2: Encode and decode data. `huffman_encoding` has O(nlogn) time complexity, 
+sum of `build_frequency_dict`'s O(m) and `build_huffman_tree`'s O(nlogn). As for decoding, 
+`huffman_decoding` has O(n) time complexity, where n is the length of the encoded data.
+  Space complexity is O(n) for the priority queue and O(h) for the Huffman tree, where n 
+is the size of the queue and h is the height of the tree.
 
 ## Problem4
   The `is_user_in_group` function recursively traverses the given group to find if the 
