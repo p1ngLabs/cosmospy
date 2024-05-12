@@ -50,6 +50,26 @@ of memory for storing input list and three pointers only.
 
 
 ## Problem5: Autocomplete with Tries
+  The autocomplete is implemented by adding the `find` and `suffixes` methods to the Trie 
+data structure we built in the previous lesson. 
+
+  The `find` method iterate through characters in the given prefix. The worst-case complexity 
+of `find` is O(m) where m is the length of the prefix since the nested dictionary allows O(1) 
+at each trie level. The find method has a space complexity of O(1) because it only requires 
+a constant amount of extra space for variables used in the method.
+
+  The `suffixes` implements a recursive DFS in the sub-tree starting from the prefix node and 
+returns a list of complete word suffixes. The time complexity of the suffixes method depends 
+on the number of complete word suffixes below the current node. In the worst case, `suffixes` 
+may visit all nodes below the current node, leading to a time complexity of O(n) where n is 
+the total number of nodes in the Trie. However, if somehow we have a balanced Trie, time 
+complexity in the worst case could be O(k) where k is the number of complete word suffixes. 
+
+  The `suffixes` method uses additional space to store the suffixes found below the current 
+prefix node. In the worst case, if all words in the Trie have unique suffixes, the space 
+complexity can be O(k * m), where k is the number of complete word suffixes below the current 
+node and m is the average length of the suffixes. In case of a balanced Trie, the space 
+complexity can be approximated to O(k * h), where h is the height of the Trie.
 
 
 ## Problem6: Unsorted Integer Array
