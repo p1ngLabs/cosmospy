@@ -46,6 +46,7 @@ def test_function(test_case):
   else:
     print("Fail")
 
+
 # Test Case 1: Sanity test
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])

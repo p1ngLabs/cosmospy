@@ -25,6 +25,7 @@ def sqrt(number):
 
   return result
 
+
 # Test Case 1: Sanity test
 print(sqrt(16), sqrt(36), sqrt(100))
 # prints 4, 6, 10

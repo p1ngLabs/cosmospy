@@ -1,7 +1,7 @@
 # Project: Basic Algorithms
 
 ## Problem1: Finding the Square Root of an Integer
-  The algorithm ultilizes and performs binary search in the range of 1 to the given number,
+  The algorithm utilizes and performs binary search in the range of 1 to the given number,
 finds the middle value then check whether `middle ** 2` is less than or equal to `number` in 
 each iteration. If it is, update the return value then continue searching in the right half, 
 the final result is the floored squared root of the given number.
@@ -10,7 +10,7 @@ algorithm only stores some integers in `start`, `end`, `result` and does not dep
 size of the given number.
 
 ## Problem2: Search in a Rotated Sorted Array
-  The algorithm ultilizes modified binary search to ensure a time complexity of O(logn). It 
+  The algorithm utilizes modified binary search to ensure a time complexity of O(logn). It 
 calculate the middle index in each iteration of the while loop, then check if the left or 
 right half of the input list is sorted by comparing start and end number of that half. 
 Depending on whether the left or right half is sorted, we adjust the pointers `start` and 
@@ -20,7 +20,11 @@ located.
 depends on the size of the input list.
 
 ## Problem3: Rearrange Array Digits
-
+  The algorithm utilizes merge sort algorithm to first sort the input list in descending 
+order. Then it adds the array number elements into the two resulting number `num1` and 
+`num2` alternatively. Eventually, it returns a list containing those two numbers.
+  The use of merge sort algorithm ensure a time complexity of O(nlogn) and a space complexity
+of O(n).
 
 ## Problem4: Dutch National Flag Problem
 
