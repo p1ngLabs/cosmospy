@@ -53,7 +53,15 @@ of memory for storing input list and three pointers only.
 
 
 ## Problem6: Unsorted Integer Array
-
+  The algorithm first initialize `min` and `max` to the first element of the list. Then it 
+traverse the list once, comparing each element with the current min and max values, if the 
+current element is:
+  - less than the current `min`, update `min` to the current element
+  - greater than the current `max`, update `max` to the current element 
+  After iteration, `min` and `max` are now the minimum and maximum values of the given list, 
+respectively.
+  Since we traverse the array only once, the time complexity is O(n) where n is the size of 
+the input list. The space complexity is O(1) as the algorithm only use a couple of auxiliaries.
 
 ## Problem7: Request Routing in a Web Server with a Trie
 
