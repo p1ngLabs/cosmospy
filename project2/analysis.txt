@@ -10,7 +10,14 @@ algorithm only stores some integers in `start`, `end`, `result` and does not dep
 size of the given number.
 
 ## Problem2: Search in a Rotated Sorted Array
-
+  The algorithm ultilizes modified binary search to ensure a time complexity of O(logn). It 
+calculate the middle index in each iteration of the while loop, then check if the left or 
+right half of the input list is sorted by comparing start and end number of that half. 
+Depending on whether the left or right half is sorted, we adjust the pointers `start` and 
+`end` accordingly to continue the binary search in the sorted half where the target might be 
+located.
+  The space complexity is O(1) as in problem 1 because the algorithm performance does not 
+depends on the size of the input list.
 
 ## Problem3: Rearrange Array Digits
 
