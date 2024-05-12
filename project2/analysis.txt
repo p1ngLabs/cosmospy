@@ -83,5 +83,19 @@ respectively.
   Since we traverse the array only once, the time complexity is O(n) where n is the size of 
 the input list. The space complexity is O(1) as the algorithm only use a couple of auxiliaries.
 
-## Problem7: Request Routing in a Web Server with a Trie
 
+## Problem7: Request Routing in a Web Server with a Trie
+  The HTTPRouter is implemented by using a Trie structure. The actual Router class supports 
+adding a handler by path and looking up a handler by path. All these operations will be 
+delegated to the RouteTrie, hence the analysis will focus on the RouteTrie and the 
+RouteTrieNode class.
+
+  The RouteTrie class implements the `insert` method for traversing the trie and creating new 
+nodes as needed for each part of the path. It also implements the `find` method for traversing 
+the RouteTrie by following the path parts to find the associated handler. Both take time 
+proportional to the length of the processing path so these operations have a time complexity 
+of O(k), where k is the length of the path. Its space complexity is O(m), where m is the total 
+number of nodes in the RouteTrie
+
+  The RouteTrieNode class implements the `insert` method which has the time complexity of O(1) 
+and a space complexity of O(n) where n is the number of unique path parts.
