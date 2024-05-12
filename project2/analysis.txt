@@ -9,6 +9,7 @@ the final result is the floored squared root of the given number.
 algorithm only stores some integers in `start`, `end`, `result` and does not depends on the 
 size of the given number.
 
+
 ## Problem2: Search in a Rotated Sorted Array
   The algorithm utilizes modified binary search to ensure a time complexity of O(logn). It 
 calculate the middle index in each iteration of the while loop, then check if the left or 
@@ -19,6 +20,7 @@ located.
   The space complexity is O(1) as in problem 1 because the algorithm performance does not 
 depends on the size of the input list.
 
+
 ## Problem3: Rearrange Array Digits
   The algorithm utilizes merge sort algorithm to first sort the input list in descending 
 order. Then it adds the array number elements into the two resulting number `num1` and 
@@ -26,7 +28,25 @@ order. Then it adds the array number elements into the two resulting number `num
   The use of merge sort algorithm ensure a time complexity of O(nlogn) and a space complexity
 of O(n).
 
+
 ## Problem4: Dutch National Flag Problem
+  The algorithm is implemented by traversing the input list and swapping numbers by pushing
+the 0s towards the beginning and 2s towards the end of the list.
+  
+  We first initialize three pointers: red, white, blue (Dutch national flag colors), 
+representing the positions where 0s, 1s and 2s should be placed in the list, respectively. 
+The blue equals `len(list) - 1` initially indicating the rightmost position where the next 
+2 should be placed. We then traverse the list once using the white pointer. At each position, 
+we evaluate the value at the position of the white pointer then:
+  - If element at white is 0 (supposed to be at the beginning of the list), swap it with the 
+element at the red pointer and increase both red and white pointers.
+  - If element at white is 1 (is at correct position), move on to the next element.
+  - If element at white is 2 (supposed to be at the end of the list), swap it with the element 
+at the blue pointer and decrease the blue pointer.
+
+  Since we only traverse the list once, the time complexity is O(n) where n is the length 
+of the list. The space complexity is of O(1) as it sorts in place and uses constant amount 
+of memory for storing input list and three pointers only.
 
 
 ## Problem5: Autocomplete with Tries
